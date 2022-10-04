@@ -1,0 +1,94 @@
+:root{
+    --fondo_oscuro:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(3,37,10,1) 22%, rgba(0,209,252,1) 55%, rgba(15,33,41,1) 90%);
+    --fondo_panel:#221418;
+    --metodos:#f1a20b;
+    --body_c:rgb(2, 1, 19);
+}
+@font-face {
+    font-family: minecraft;
+    src: url(./fonts/minecraft.otf);
+}
+body {
+    margin: 0;
+    background-color:var(--body_c);
+}
+#panel{
+    background:var(--fondo_oscuro);  
+    margin: auto;
+}
+.titulo{
+    font-family: minecraft;
+    color: var(--body_c);
+}
+
+.tpanel{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 250%;
+    font-style: bold;
+    position: relative;
+}
+.cajametodos{
+    border-radius: 2%;
+    background-color:var(--fondo_panel);
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 20rem;
+    grid-auto-flow: dense;
+    grid-template-columns:repeat(auto-fill,minmax(20rem,1fr)) ;
+    position: absolute;
+    width: 80%;
+    margin-top: 2%;
+    left: 10%;
+    overflow-y: scroll;
+    height: 80%;
+}
+.metodo{
+    position: relative;
+    left: 4%;
+    top: 5%;
+    background-color:var(--metodos);
+    grid-column: span 0.5;
+    margin: 3%;
+    width: 90%;
+    transition: all 1s;
+    transform: rotateY(50deg) rotateZ(-1deg);
+    border-radius: 2%;
+}
+.metodo p{
+    text-align: center;
+    font-family: minecraft;
+    font-size: 120%;
+}
+.metodo img{
+    width: 80%;
+    height: 50%;
+    left: 10%;
+    position: relative;
+}
+.metodo button{
+    position: relative;
+    width: 50%;
+    height: 14%;
+    left: 23%;
+    top: 8%;
+}
+.metodo:hover{
+    transition: all 0.5s;
+    transform: rotateY(0deg);
+}
+
+.ejecucion{
+    border-radius: 2%;
+    margin:1%;
+    margin-top: 2%;
+    top: 1%;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+    background-color: var(--metodos);
+    position:fixed;
+    display: none;
+}
+
