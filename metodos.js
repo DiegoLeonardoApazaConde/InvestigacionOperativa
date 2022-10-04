@@ -9,3 +9,4 @@ const cpm = () =>{
     const comp = document.getElementById("CPM")
     comp.style.display = "block";
 }
+console.log("hola");
