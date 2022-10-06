@@ -1,36 +1,50 @@
+@font-face {
+    font-family: newfont;
+    src: url(./asimov-font/Asimov-MwEn.otf);
+}
+
 :root{
-    --fondo_oscuro:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(3,37,10,1) 22%, rgba(0,209,252,1) 55%, rgba(15,33,41,1) 90%);
+    --fondo_oscuro: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,209,252,1) 0%, rgba(3,37,10,1) 0%, rgba(15,33,41,1) 49%);
     --fondo_panel:#221418;
     --metodos:#f1a20b;
     --body_c:rgb(2, 1, 19);
-}
-@font-face {
-    font-family: minecraft;
-    src: url(./fonts/minecraft.otf);
+    --claro:white;
 }
 body {
     margin: 0;
     background-color:var(--body_c);
+    font-family: newfont;
+    color: var(--body_c);
 }
 #panel{
+    padding: 1em;
     background:var(--fondo_oscuro);  
     margin: auto;
 }
-.titulo{
-    font-family: minecraft;
-    color: var(--body_c);
-}
-
 .tpanel{
+    left: 1%;
     text-align: center;
-    width: 60%;
-    margin: 0 auto;
-    font-size: 250%;
+    width: 50%;
+    margin: auto;
     font-style: bold;
     position: relative;
+    display: inline;
+    color: var(--claro);
+    font-size: 150%;
+}
+.infoest{
+    color: var(--claro);
+    left: 30%;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    font-style: bold;
+    position: relative;
+    display: inline;
+    font-size: 150%;
 }
 .cajametodos{
-    border-radius: 2%;
+    border-radius: 1%;
     background-color:var(--fondo_panel);
     display: grid;
     gap: 1rem;
@@ -39,10 +53,10 @@ body {
     grid-template-columns:repeat(auto-fill,minmax(20rem,1fr)) ;
     position: absolute;
     width: 80%;
-    margin-top: 2%;
+    margin-top: 1.3%;
     left: 10%;
     overflow-y: scroll;
-    height: 80%;
+    height: 85%;
 }
 .metodo{
     position: relative;
