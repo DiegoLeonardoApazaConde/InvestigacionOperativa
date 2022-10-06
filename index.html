@@ -8,9 +8,16 @@
     <title>Metodos</title>
 </head>
 <body>
+    <div id="info">
+        <p>Integrantes</p>
+        <ul>
+            <li>Diego Leonardo Apaza Conde 2018-119021</li>
+        </ul>
+    </div>
+    <div id="panelmaestro">
     <div id="panel">
-        <p class="titulo tpanel">ELIJA METODO CON EL QUE DESEA TRABAJAR</p>
-        <p  class="infoest" onclick="informacion();"><input type="button" value="INFORMACION DE GRUPO"></input></p>
+        <p class="titulo tpanel">INVESTIGACION OPERATIVA</p>
+        <p  class="infoest"><input id="botoninfo" type="submit" value="INFORMACION DE GRUPO" onclick="informacion();"></input></p>
     </div>
         <div class="cajametodos " id="empaque">
             <div class="metodo"><p>CPM</p><img src="./src/cpm.jfif" alt=""><button onclick="cpm();"></button></div>
@@ -27,6 +34,7 @@
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
         </div>
         <div id="CPM" class="ejecucion"></div>
+        </div>
 <script src="metodos.js"></script>
 </body> 
 </html>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: newfont;
-    src: url(./asimov-font/Asimov-MwEn.otf);
+    src: url(./asimov-font/AsimovDistantItalic-2qBe.otf);
 }
 
 :root{
@@ -9,6 +9,10 @@
     --metodos:#f1a20b;
     --body_c:rgb(2, 1, 19);
     --claro:white;
+}
+#info{
+    display: none;
+    color: var(--claro);
 }
 body {
     margin: 0;
@@ -33,8 +37,8 @@ body {
     font-size: 150%;
 }
 .infoest{
-    color: var(--claro);
-    left: 30%;
+    color:var(--claro);
+    left: 50%;
     text-align: center;
     width: 50%;
     margin: auto;
@@ -42,6 +46,12 @@ body {
     position: relative;
     display: inline;
     font-size: 150%;
+}
+
+#botoninfo {
+    background-color: var(--fondo_panel);
+    color: var(--claro);
+    padding: 1.1%;
 }
 .cajametodos{
     border-radius: 1%;
@@ -53,7 +63,7 @@ body {
     grid-template-columns:repeat(auto-fill,minmax(20rem,1fr)) ;
     position: absolute;
     width: 80%;
-    margin-top: 1.3%;
+    margin-top: 0.8%;
     left: 10%;
     overflow-y: scroll;
     height: 85%;
