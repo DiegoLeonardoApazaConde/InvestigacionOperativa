@@ -26,32 +26,20 @@ body {
     margin: auto;
 }
 .tpanel{
-    left: 1%;
-    text-align: center;
-    width: 50%;
-    margin: auto;
-    font-style: bold;
     position: relative;
-    display: inline;
+    left: 9%;
+    font-style: bold;
     color: var(--claro);
     font-size: 150%;
-}
-.infoest{
-    color:var(--claro);
-    left: 50%;
-    text-align: center;
-    width: 50%;
-    margin: auto;
-    font-style: bold;
-    position: relative;
     display: inline;
-    font-size: 150%;
 }
-
 #botoninfo {
+    left: 42%;
+    position: relative;
     background-color: var(--fondo_panel);
     color: var(--claro);
     padding: 1.1%;
+    display: inline;
 }
 .cajametodos{
     border-radius: 1%;
