@@ -21,27 +21,31 @@ body {
     color: var(--body_c);
 }
 #panel{
-    padding: 1em;
+    display: flex;
     background:var(--fondo_oscuro);  
-    margin: auto;
+    flex-wrap: wrap;
 }
 .tpanel{
-    position: relative;
-    left: 9%;
     font-style: bold;
     color: var(--claro);
-    font-size: 150%;
-    display: inline;
+    font-size: 100%;
+    flex-grow: 1;
+    flex-basis: 10rem;
+    padding: 1.1%;
+    text-align: center;
 }
 #botoninfo {
-    left: 42%;
-    position: relative;
     background-color: var(--fondo_panel);
     color: var(--claro);
     padding: 1.1%;
-    display: inline;
+    flex-grow: 1;
+    flex-basis: 10rem;
+    text-align: center;
 }
 .cajametodos{
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 60%;
     border-radius: 1%;
     background-color:var(--fondo_panel);
     display: grid;
@@ -50,9 +54,9 @@ body {
     grid-auto-flow: dense;
     grid-template-columns:repeat(auto-fill,minmax(20rem,1fr)) ;
     position: absolute;
-    width: 80%;
+    left: 2.4%;
+    width: 95%;
     margin-top: 0.8%;
-    left: 10%;
     overflow-y: scroll;
     height: 85%;
 }
