@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="estilo.css">
     <title>Metodos</title>
 </head>
-<body>
+<body id="cuerpo">
     <div id="info">
         <p>Integrantes</p>
         <ul>
+            <li>Diego Leonardo Apaza Conde 2018-119021</li>
+            <li>Diego Leonardo Apaza Conde 2018-119021</li>
+            <li>Diego Leonardo Apaza Conde 2018-119021</li>
+            <li>Diego Leonardo Apaza Conde 2018-119021</li>
             <li>Diego Leonardo Apaza Conde 2018-119021</li>
         </ul>
     </div>
     <div id="panelmaestro">
     <div id="panel">
         <p class="titulo tpanel">INVESTIGACION OPERATIVA</p>
-        <p id="botoninfo" onclick="informacion();">INFORMACION DE GRUPO</p>
+        <button id="botoninfo" onclick="informacion();"><span>INFORMACION DE GRUPO</span></button>
     </div>
         <div class="cajametodos " id="empaque">
             <div class="metodo"><p>CPM</p><img src="./src/cpm.jfif" alt=""><button onclick="cpm();"></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
+            <div class="metodo"><p>PERT</p><img src="./src/pert.jpg" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
@@ -33,7 +37,12 @@
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
         </div>
-        <div id="CPM" class="ejecucion"></div>
+        </div>
+        <div id="CPM" class="ejecucion">
+            <div>dato1<input id="dato1" type="text"></div>
+            <div>dato2<input id="dato2" type="text"></div>
+            <button onclick="suma();">Sumar</button>
+            <div>respuesta : <p id="respuesta"></p></div>
         </div>
 <script src="metodos.js"></script>
 </body> 

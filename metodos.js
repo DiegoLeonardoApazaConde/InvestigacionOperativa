@@ -1,6 +1,6 @@
 const desaparecer = () =>{
-    const elemento = document.getElementById("empaque")
-    elemento.style.display = "none"
+    const todo = document.getElementById("panelmaestro")
+   todo.style.display="none"
 
 }
 
@@ -11,8 +11,16 @@ const cpm = () =>{
 }
 
 const informacion = () =>{
-   const todo = document.getElementById("panelmaestro")
-   todo.style.display="none"
+   desaparecer()
    const lista = document.getElementById("info")
    lista.style.display="block"
+   const cuerpo = document.getElementById("cuerpo")
+   cuerpo.style.backgroundImage="url(./src/)"
+   }
+
+const suma = () => {
+    const sum1 =Number(document.getElementById("dato1").value) 
+    const sum2 =Number(document.getElementById("dato2").value)
+    const suma = sum1 + sum2
+    alert(suma)
 }

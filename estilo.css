@@ -11,8 +11,15 @@
     --claro:white;
 }
 #info{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background:var(--metodos);
+    text-align: center;
     display: none;
     color: var(--claro);
+    top: 25%;
+    left: 25%;
 }
 body {
     margin: 0;
@@ -28,20 +35,53 @@ body {
 .tpanel{
     font-style: bold;
     color: var(--claro);
-    font-size: 100%;
     flex-grow: 1;
     flex-basis: 10rem;
     padding: 1.1%;
-    text-align: center;
+    margin-left: 2%;
 }
-#botoninfo {
+#botoninfo{
     background-color: var(--fondo_panel);
     color: var(--claro);
-    padding: 1.1%;
     flex-grow: 1;
     flex-basis: 10rem;
+    cursor: pointer;
     text-align: center;
+    border-radius:2%;
+    position: relative;
+    transition: 1s ease-in-out;
+    overflow: hidden;
+    border: none;
+    height: 3rem;
+    margin-top: 1.2%;
 }
+#botoninfo span{
+    overflow: hidden;
+    position: relative;
+    z-index:2;
+    font-size: 120%;
+    font-style: oblique;
+}
+#botoninfo::after{
+    top: 0%;
+    content: "";
+    left: 0;
+    width: 2%;
+    height: 4px;
+    background-color:none;
+    z-index: 1;
+    position: absolute;
+    transition: 1s ease-in-out;
+}
+#botoninfo:hover::after{
+    color: var(--fondo_oscuro);
+    background-color:var(--claro);
+    scale: 200;
+}
+#botoninfo:hover{
+    color: var(--fondo_oscuro);
+}
+
 .cajametodos{
     flex-basis: 0;
     flex-grow: 999;
@@ -89,6 +129,7 @@ body {
     height: 14%;
     left: 23%;
     top: 8%;
+    cursor: pointer;
 }
 .metodo:hover{
     transition: all 0.5s;
