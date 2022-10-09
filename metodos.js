@@ -8,6 +8,7 @@ const cpm = () =>{
     desaparecer()
     const comp = document.getElementById("CPM")
     comp.style.display = "block";
+
 }
 
 const informacion = () =>{
@@ -18,9 +19,28 @@ const informacion = () =>{
    cuerpo.style.backgroundImage="url(./src/)"
    }
 
-const suma = () => {
-    const sum1 =Number(document.getElementById("dato1").value) 
-    const sum2 =Number(document.getElementById("dato2").value)
-    const suma = sum1 + sum2
-    alert(suma)
+//Generamos la matriz 
+const genMatriz = () => {
+    const botgen = document.getElementById("botgen")
+    botgen.style.display = "none"
+    const num =Number(document.getElementById("num").value)+1 
+    const depTabla = document.getElementById("tabla")
+    for (let n = 0; n < num; n++) {
+        const col = document.createElement("tr")
+        col.id = (`fila${n}`)
+        depTabla.appendChild(col)
+    }
+
+    for (let d = 0; d < num; d++) {
+        const cole = document.getElementById(`fila${d}`)
+        for (let k = 0; k< num+1; k++) {
+            const fil = document.createElement("td")
+            const but = document.createElement("input")
+            but.type = "text"
+            fil.id=(`colum${k},f${d}`)
+            fil.appendChild(but)
+            cole.appendChild(fil)
+            }
+        }
 }
+

@@ -147,5 +147,9 @@ body {
     background-color: var(--metodos);
     position:fixed;
     display: none;
+    overflow: scroll;
+}
+#tabla{
+    
 }
 
