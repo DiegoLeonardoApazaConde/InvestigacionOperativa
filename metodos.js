@@ -38,7 +38,26 @@ const genMatriz = () => {
             const but = document.createElement("input")
             but.type = "text"
             fil.id=(`colum${k},f${d}`)
-            fil.appendChild(but)
+            if (d==0) {
+                if(k==0){
+                    const texto = document.createTextNode(`Actividad`)
+                    const pletra = document.createElement("p")
+                    pletra.append(texto)
+                    fil.appendChild(pletra)
+                }else if(k==1){
+                    const texto = document.createTextNode(`Tiempos`)
+                    const pletra = document.createElement("p")
+                    pletra.append(texto)
+                    fil.appendChild(pletra)
+                }else{
+                    const texto = document.createTextNode(`Predecesor ${k-2}`)
+                    const pletra = document.createElement("p")
+                    pletra.append(texto)
+                    fil.appendChild(pletra)
+                }
+            }else{
+                fil.appendChild(but)
+            }
             cole.appendChild(fil)
             }
         }
