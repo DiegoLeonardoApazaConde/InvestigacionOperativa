@@ -22,7 +22,6 @@ const informacion = () =>{
 //Generamos la matriz 
 const genMatriz = () => {
     const botgen = document.getElementById("botgen")
-    botgen.style.display = "none"
     const num =Number(document.getElementById("num").value)+1 
     const depTabla = document.getElementById("tabla")
     for (let n = 0; n < num; n++) {
@@ -37,7 +36,7 @@ const genMatriz = () => {
             const fil = document.createElement("td")
             const but = document.createElement("input")
             but.type = "text"
-            fil.id=(`colum${k},f${d}`)
+            but.id=(`colum${k},f${d}`)
             if (d==0) {
                 if(k==0){
                     const texto = document.createTextNode(`Actividad`)
@@ -61,5 +60,8 @@ const genMatriz = () => {
             cole.appendChild(fil)
             }
         }
+    const go = document.getElementById("leer")
+    go.style.display = "block"
+    botgen.style.display  = "none"
 }
 

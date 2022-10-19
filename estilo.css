@@ -20,6 +20,8 @@
     color: var(--claro);
     top: 25%;
     left: 25%;
+    text-align: center;
+    overflow-y: scroll;
 }
 body {
     margin: 0;
@@ -152,4 +154,6 @@ body {
 #tabla{
     
 }
-
+#leer{
+    display: none;
+}
