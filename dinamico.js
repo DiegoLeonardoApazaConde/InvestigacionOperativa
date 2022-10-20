@@ -3,7 +3,7 @@ const desaparecer = () =>{
    todo.style.display="none"
 
 }
-
+//CPM
 const cpm = () =>{
     desaparecer()
     const comp = document.getElementById("CPM")
