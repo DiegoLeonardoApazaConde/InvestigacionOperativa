@@ -151,9 +151,17 @@ body {
     display: none;
     overflow: scroll;
 }
+#tabla tr td input{
+    width:  90% ;
+}
 #tabla{
-    
+    position: relative;
+    top: 10%;
+    left: 10%;
+    font-size: 70%;
+    width:  10% ;
 }
 #leer{
     display: none;
 }
+

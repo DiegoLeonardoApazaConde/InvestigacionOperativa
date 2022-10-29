@@ -1,13 +1,20 @@
+var tamaño 
 const valor = () =>{
-    var tamaño = Number(document.getElementById("num").value)
-} 
+     tamaño = Number(document.getElementById("num").value)                                                                                                                                          
+    } 
 
 const CallData = () =>{
-    const tamaño = Number(document.getElementById("num").value)
-    alert(tamaño)
-    const elemento = []
-    for (let index = 0; index < tamaño; index++) {
-        elemento[index] = document.getElementById(`colum${index},f1`).value       
+    var punt = 0
+    const elemento1=[]
+    for (let di = 0; di < tamaño; di++) {
+        let idse = `colum${di},f1`
+        let valor =  document.getElementById(idse).value;
+        if(valor != ""){
+            elemento1[punt][1]=valor;
+             
+            punt++
+        }
+
     }
-   console.log(elemento);
+   console.log(elemento1)    
 }
