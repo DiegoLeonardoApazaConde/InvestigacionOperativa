@@ -9,6 +9,7 @@
     --metodos:#f1a20b;
     --body_c:rgb(2, 1, 19);
     --claro:white;
+    --oscuro:rgb(25, 21, 99);
 }
 #info{
     position: absolute;
@@ -151,17 +152,34 @@ body {
     display: none;
     overflow: scroll;
 }
+#botgen{
+    position: relative;
+    top: 5%;
+    left: 20%;
+    font-size: 80%;
+}
 #tabla tr td input{
-    width:  90% ;
+    background-color: var(--oscuro);
+    color: var(--claro);
+    position: relative;
+}
+#tabla tr{
+    background-color: var(--fondo_panel);
+    color: var(--claro);
 }
 #tabla{
+    display: none;
+    color: var(--claro);
     position: relative;
     top: 10%;
     left: 10%;
-    font-size: 70%;
-    width:  10% ;
+    font-size: 66%;
 }
 #leer{
+    position: relative;
     display: none;
+    top: 12%;
+    left: 10%;
+    width: 30%;
 }
 

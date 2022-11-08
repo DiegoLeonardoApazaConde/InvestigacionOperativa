@@ -2,19 +2,32 @@ var tamaño
 const valor = () =>{
      tamaño = Number(document.getElementById("num").value)                                                                                                                                          
     } 
-
+    
 const CallData = () =>{
-    var punt = 0
-    const elemento1=[]
-    for (let di = 0; di < tamaño; di++) {
-        let idse = `colum${di},f1`
-        let valor =  document.getElementById(idse).value;
-        if(valor != ""){
-            elemento1[punt][1]=valor;
-             
-            punt++
+    let valor ;
+    let contenerdor = new Array();
+    for (let df = 1; df < tamaño+1; df++) {
+        let matrizval = new Array();
+        for (let dc =0;dc < tamaño+2; dc++) {
+            valor =  document.getElementById(`colum${dc},f${df}`).value;
+            if(valor != ""){
+                    matrizval[dc] =valor 
+             }
         }
-
+        const result = matrizval.filter(word => word.length!=0);
+        contenerdor[df-1] = result; 
     }
-   console.log(elemento1)    
+    //ACTIVIDADES Y TIEMPO
+    for (let index = 0; index < tamaño; index++) {
+            //Actividades
+            contenerdor[index][0]
+            for (let n = 0; n < tamaño-1; n++) {
+               for (let m = 2; m < tamaño; m++) {
+                    console.log(index+"->"+contenerdor[n][m])
+                if (contenerdor[index][0]==contenerdor[n][m]) {
+                    
+                }
+               }  
+            }
+    }
 }

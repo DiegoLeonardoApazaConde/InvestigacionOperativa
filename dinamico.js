@@ -61,7 +61,9 @@ const genMatriz = () => {
             }
         }
     const go = document.getElementById("leer")
+    const tabla = document.getElementById("tabla")
     go.style.display = "block"
     botgen.style.display  = "none"
+    tabla.style.display = "block"
 }
 
