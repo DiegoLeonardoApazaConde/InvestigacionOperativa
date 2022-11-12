@@ -22,12 +22,8 @@ const CallData = () =>{
             //Actividades
             contenerdor[index][0]
             for (let n = 0; n < tamaño-1; n++) {
-               for (let m = 2; m < tamaño; m++) {
-                    console.log(index+"->"+contenerdor[n][m])
-                if (contenerdor[index][0]==contenerdor[n][m]) {
-                    
-                }
-               }  
+                
+                 
             }
     }
 }
