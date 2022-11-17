@@ -3,12 +3,12 @@ const desaparecer = () =>{
    todo.style.display="none"
 
 }
-
-const cpm = () =>{
+var estado;
+const aparpan = (panmet,es) =>{
     desaparecer()
-    const comp = document.getElementById("CPM")
+    const comp = document.getElementById(panmet)
     comp.style.display = "block";
-
+    estado = es;
 }
 
 const informacion = () =>{
@@ -16,14 +16,14 @@ const informacion = () =>{
    const lista = document.getElementById("info")
    lista.style.display="block"
    const cuerpo = document.getElementById("cuerpo")
-   cuerpo.style.backgroundImage="url(./src/)"
+   cuerpo.style.backgroundImage="url(./src/pared.jpg)"
    }
 
 //Generamos la matriz 
-const genMatriz = () => {
+const genMatriz = (tablaid,leer) => {
     const botgen = document.getElementById("botgen")
     const num =Number(document.getElementById("num").value)+1 
-    const depTabla = document.getElementById("tabla")
+    const depTabla = document.getElementById(tablaid)
     for (let n = 0; n < num; n++) {
         const col = document.createElement("tr")
         col.id = (`fila${n}`)
@@ -60,8 +60,8 @@ const genMatriz = () => {
             cole.appendChild(fil)
             }
         }
-    const go = document.getElementById("leer")
-    const tabla = document.getElementById("tabla")
+    const go = document.getElementById(leer)
+    const tabla = document.getElementById(tablaid)
     go.style.display = "block"
     botgen.style.display  = "none"
     tabla.style.display = "block"

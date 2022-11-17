@@ -11,6 +11,9 @@
     <div id="info">
         <p>Integrantes</p>
         <ul>
+           <li>Diego Leonardo Apaza Conde 2018-119021</li>
+           <li></li>
+           <li></li>
            <li></li>
            <li></li>
         </ul>
@@ -21,9 +24,9 @@
         <button id="botoninfo" onclick="informacion();"><span>INFORMACION DE GRUPO</span></button>
     </div>
         <div class="cajametodos " id="empaque">
-            <div class="metodo"><p>CPM</p><img src="./src/cpm.jfif" alt=""><button onclick="cpm();"></button></div>
-            <div class="metodo"><p>PERT</p><img src="./src/pert.jpg" alt=""><button></button></div>
-            <div class="metodo"><p>EOQ</p><img src="" alt=""><button ></button></div>
+            <div class="metodo"><p>CPM</p><img src="./src/cpm.jfif" alt=""><button onclick="aparpan('CPM','CPM');"></button></div>
+            <div class="metodo"><p>PERT</p><img src="./src/pert.jpg" alt=""><button onclick="aparpan('CPM','PERT');"></button></div>
+            <div class="metodo"><p>EOQ</p><img src="./src/EOQ.jpg" alt=""><button ></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
@@ -38,12 +41,12 @@
         <div id="CPM" class="ejecucion">
             <div id="botgen"> Digite numero de actividades
             <input id="num" type="text">
-            <input type="submit" value="generar" onclick="genMatriz();valor();">
+            <input type="submit" value="generar" onclick="genMatriz('tabla1','leer1');valor();">
             </div>
-            <table id="tabla" border="1">
+            <table id="tabla1" class="tablas" border="1">
                 
             </table>
-            <input id="leer" type="submit" value="Ejecutar CPM" onclick="CallData();">
+            <input id="leer1" class="leer" type="submit" value="Ejecutar" onclick="CallData('leer1');">
         </div>
 <script src="dinamico.js"></script>
 <script src="metodos/cpm.js"></script>
