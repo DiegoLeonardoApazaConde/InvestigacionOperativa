@@ -6,7 +6,7 @@ const valor = () =>{
 const CallData = () =>{
     let valor ;
     let contenerdor = new Array();
-    //LLamar valores de la tabla
+    //LLamar valores de la tabla del HTML
     for (let df = 1; df < tamaño+1; df++) {
         let matrizval = new Array();
         for (let dc =0;dc < tamaño+2; dc++) {
@@ -18,37 +18,70 @@ const CallData = () =>{
         const result = matrizval.filter(word => word.length!=0);
         contenerdor[df-1] = result; 
     }
-    //Deposita valores de activiadades sin predecesor
-    const tEarly = new Array();
-    for (let index = 0; index < tamaño; index++) {
-            //Actividades sin predecesor rrellenadas
-            if(contenerdor[index][2] == undefined){
-                tEarly[index] = Number(contenerdor[index][1])
-            }
+    var nodosruta = []
+    for(let nm=0;nm<tamaño;nm++){
+            nodosruta[nm]=contenerdor[nm][1]
     }
-    var timeret = 0;
-    //Funcion que calcula el tiempo de actividad
-    function tiempoget(letra) {
-        if (letra != undefined) {
+    console.log(nodosruta);
+    var d = 0, prede = [], miprede = [], vectorutil = [],tiempodenodo=0
+    //Funcion para llamar el tiempo del vector de "nodos"
+    function tiempoFin(letra) {
+        tiempodenodo=0
             for (let ded = 0; ded < tamaño; ded++) {
                 if (letra == contenerdor[ded][0]) {
-                    timeret = Number(contenerdor[ded][1]);
+                    tiempodenodo = Number(nodosruta[ded]);
                 }
             }
-        }
-        return timeret;
+        return tiempodenodo;
+    }
+    //Funcion para buscar de quien soy predecesor
+    function dequien(letre){
+        miprede.length = 0;
+        d = 0
+            for(let qx = 0;qx<tamaño;qx++){
+                for(let ox = 0;ox<tamaño;ox++){
+                        if(letre == contenerdor[qx][ox+2]){
+                            miprede[d] = contenerdor[qx][0]
+                            d++
+                        }
+                }
+            }
+        return miprede;
+    }
+    //Funcion para buscar predecesores
+    function mprede(letro){
+        prede.length = 0;
+                for(let dx = 0;dx<tamaño;dx++){
+                        if(letro == contenerdor[dx][0]){
+                            for(let mx = 0;mx<tamaño;mx++){
+                                prede[mx] = contenerdor[dx][mx+2]
+                            }
+                        }
+                }
+        prede = prede.filter(letri => letri!==undefined);
+        return prede;
     }
     //Bucle para ruta critica(tiempos)
     for (let index = 0; index < tamaño; index++) {
-        let Mayor = 0;
-        if(contenerdor[index][2] != undefined){
-        Mayor = tiempoget(contenerdor[index][2])
-           for (let inp = 1 ; inp<tamaño ; inp++){
-                    if(Mayor<= tiempoget(contenerdor[index][inp+2])){
-                        Mayor = tiempoget(contenerdor[index][inp+2])
+        if(contenerdor[index][2]!=undefined){
+                vectorutil = mprede(contenerdor[index][0])
+                if(vectorutil.length>1){
+                    var numermay = tiempoFin(vectorutil[0])
+                    for(m = 0;m<vectorutil.length;m++){ 
+                        if(tiempoFin(vectorutil[m])>numermay){
+                                numermay = tiempoFin(vectorutil[m])
+                        }
                     }
-           }
-        console.log(contenerdor[index][0]+"->"+Mayor);
+                    nodosruta[index] = numermay+Number(contenerdor[index][1])
+                    console.log(nodosruta);
+                }else{
+                    nodosruta[index] = tiempoFin(vectorutil[0])+Number(contenerdor[index][1])
+                    console.log(nodosruta);
+                }
+        }else{
+            nodosruta[index] = Number(contenerdor[index][1])
+            console.log(nodosruta);
         }
-    }
+    } 
 }
+
