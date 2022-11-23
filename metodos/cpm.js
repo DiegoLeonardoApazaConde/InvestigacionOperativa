@@ -9,6 +9,7 @@ const cuals = (met) =>{
 const CallData = () =>{
     let valor ;
     let tamcol=tamaño;
+    var opti=[],pesi=[]
     if(cual=="PERT"){tamcol+=2}
     let contenerdor = new Array();
     //LLamar valores de la tabla del HTML
@@ -21,9 +22,11 @@ const CallData = () =>{
                     if(cual=="PERT"){
                         if(dc==1){
                             promtim=promtim+Number(valor)
+                            opti[df]=Number(valor)
                         }else if(dc==2){
                             promtim=promtim+((Number(valor))*4)
                         }else if(dc==3){
+                            pesi[df]=Number(valor)
                             promtim=(promtim+Number(valor))/6
                             matrizval[dc]=String(promtim)
                         }else{
@@ -139,11 +142,16 @@ const CallData = () =>{
 
         }
     }
+    let varian,restims=0,respre=0
     //Bucle para las holguras
     for(let hh=0;hh<tamaño;hh++){
         nodoshol[hh]=(nodostarde[hh]+Number(contenerdor[hh][1]))-nodosruta[hh]
         if(nodoshol[hh]==0){
             aster[hh]="*"
+            respre=(pesi[hh+1]-opti[hh+1])/6
+            respre=Math.pow(respre,2)
+            restims = restims + respre
+            console.log(restims);
         }
         else{
             aster[hh]="no"
@@ -172,6 +180,11 @@ const CallData = () =>{
         tablafinres.appendChild(filanew)
     }
     tablafinres.style.display="block"
-    alert("EL TIEMPO DE RECORRIDO ES : "+ numermay)
     const botej = document.getElementById("leer1");botej.style.display="none" 
+    if(cual=="PERT"){
+        varian=Math.pow(restims,0.5)
+        alert("EL TIEMPO DE RECORRIDO ES : "+ numermay + " Y LA DESVIACION ESTANDAR ES : "+varian)
+    }else{
+        alert("EL TIEMPO DE RECORRIDO ES : "+ numermay)
+    }
 }
