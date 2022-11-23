@@ -26,7 +26,7 @@
         <div class="cajametodos " id="empaque">
             <div class="metodo"><p>CPM</p><img src="./src/cpm.jfif" alt=""><button onclick="aparpan('CPM','CPM');"></button></div>
             <div class="metodo"><p>PERT</p><img src="./src/pert.jpg" alt=""><button onclick="aparpan('CPM','PERT');cuals('PERT');"></button></div>
-            <div class="metodo"><p>EOQ</p><img src="./src/EOQ.jpg" alt=""><button ></button></div>
+            <div class="metodo"><p>EOQ</p><img src="./src/EOQ.jpg" alt=""><button onclick="mospanel();"></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
             <div class="metodo"><p></p><img src="" alt=""><button></button></div>
@@ -49,7 +49,18 @@
             <input id="leer1" class="leer" type="submit" value="Ejecutar" onclick="CallData('leer1');">
             <table id="tablares" border="1"></table>
         </div>
+        <div id="EOQ" class="ejecucion">
+            <ul>
+                <li>Demanda: <input id="deman" type="text"></li>
+                <li>Costo por orden: <input id="costo" type="text"></li>
+                <li>Costo por mantenimiento anual: <input id="mant" type="text"></li>
+                <li>Demora: <input id="demora" type="text"></li>
+                <li>Dias al año: <input id="diasaño" type="text"></li>
+                <input id="ejecut" type="submit" onclick="eoq()" value="ejecutar">
+            </ul> 
+        </div>
 <script src="dinamico.js"></script>
 <script src="metodos/cpm.js"></script>
+<script src="metodos/eoq.js"></script>
 </body> 
 </html>
