@@ -185,5 +185,20 @@ body {
     top: 12%;
     left: 10%;
     width: 30%;
+
+}
+#tablares{
+    position: relative;
+    display: none;
+    left: 30%;
+    top: 30%;
+}
+#tablares tr td{
+    color:var(--claro);
+    background-color: var(--oscuro);
+}
+#tablares tr th{
+    color: var(--claro);
+    background-color: var(--fondo_panel);
 }
 
