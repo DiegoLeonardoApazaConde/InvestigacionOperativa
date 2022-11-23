@@ -1,20 +1,41 @@
 var tamaño 
+var cual
 const valor = () =>{
-     tamaño = Number(document.getElementById("num").value)                                                                                                                                          
+     tamaño = Number(document.getElementById("num").value)                                                                                                                                     
     } 
-    
+const cuals = (met) =>{
+        cual = met
+}
 const CallData = () =>{
     let valor ;
+    let tamcol=tamaño;
+    if(cual=="PERT"){tamcol+=2}
     let contenerdor = new Array();
     //LLamar valores de la tabla del HTML
     for (let df = 1; df < tamaño+1; df++) {
         let matrizval = new Array();
-        for (let dc =0;dc < tamaño+2; dc++) {
+        let promtim=0;
+        for (let dc =0;dc < tamcol+2; dc++) {
             valor =  document.getElementById(`colum${dc},f${df}`).value;
             if(valor != ""){
-                    matrizval[dc] =valor 
+                    if(cual=="PERT"){
+                        if(dc==1){
+                            promtim=promtim+Number(valor)
+                        }else if(dc==2){
+                            promtim=promtim+((Number(valor))*4)
+                        }else if(dc==3){
+                            promtim=(promtim+Number(valor))/6
+                            matrizval[dc]=String(promtim)
+                        }else{
+                            matrizval[dc]=valor
+                        }
+
+                    }else{
+                        matrizval[dc] =valor 
+                    }
              }
         }
+        console.log(matrizval);
         const result = matrizval.filter(word => word.length!=0);
         contenerdor[df-1] = result; 
     }

@@ -22,17 +22,18 @@ const informacion = () =>{
 //Generamos la matriz 
 const genMatriz = (tablaid,leer) => {
     const botgen = document.getElementById("botgen")
-    const num =Number(document.getElementById("num").value)+1 
+    let num =Number(document.getElementById("num").value)+1 
     const depTabla = document.getElementById(tablaid)
     for (let n = 0; n < num; n++) {
         const col = document.createElement("tr")
         col.id = (`fila${n}`)
         depTabla.appendChild(col)
     }
-
+    let numcol = num 
+    if(estado=='PERT'){numcol+=2}
     for (let d = 0; d < num; d++) {
         const cole = document.getElementById(`fila${d}`)
-        for (let k = 0; k< num+1; k++) {
+        for (let k = 0; k< numcol+1; k++) {
             const fil = document.createElement("td")
             const but = document.createElement("input")
             but.type = "text"
@@ -43,16 +44,32 @@ const genMatriz = (tablaid,leer) => {
                     const pletra = document.createElement("p")
                     pletra.append(texto)
                     fil.appendChild(pletra)
+                }else if(estado=='PERT' && k<4){
+                            var tiemposs = ""
+                            if(k==1){tiemposs="Tiempo optimo"}
+                            else if(k==2){tiemposs="Tiempo mas probable"}
+                            else{tiemposs="Tiempo pesimista"}
+                            texto = document.createTextNode(tiemposs)
+                            const pletra = document.createElement("p")
+                            pletra.append(texto)
+                            fil.appendChild(pletra)
                 }else if(k==1){
-                    const texto = document.createTextNode(`Tiempos`)
-                    const pletra = document.createElement("p")
-                    pletra.append(texto)
-                    fil.appendChild(pletra)
-                }else{
-                    const texto = document.createTextNode(`Predecesor ${k-2}`)
-                    const pletra = document.createElement("p")
-                    pletra.append(texto)
-                    fil.appendChild(pletra)
+                        const texto = document.createTextNode(`Tiempos`)
+                        const pletra = document.createElement("p")
+                        pletra.append(texto)
+                        fil.appendChild(pletra)}
+                else{
+                    if(estado=="PERT"){
+                        const texto = document.createTextNode(`Predecesor ${k-4}`)
+                        const pletra = document.createElement("p")
+                        pletra.append(texto)
+                        fil.appendChild(pletra)
+                    }else{
+                        const texto = document.createTextNode(`Predecesor ${k-2}`)
+                        const pletra = document.createElement("p")
+                        pletra.append(texto)
+                        fil.appendChild(pletra)
+                    }
                 }
             }else{
                 fil.appendChild(but)
