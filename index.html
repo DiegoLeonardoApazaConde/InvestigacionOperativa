@@ -27,15 +27,9 @@
             <div class="metodo"><p>CPM</p><img src="./src/cpm.jfif" alt=""><button onclick="aparpan('CPM','CPM');"></button></div>
             <div class="metodo"><p>PERT</p><img src="./src/pert.jpg" alt=""><button onclick="aparpan('CPM','PERT');cuals('PERT');"></button></div>
             <div class="metodo"><p>EOQ</p><img src="./src/EOQ.jpg" alt=""><button onclick="mospanel();"></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
-            <div class="metodo"><p></p><img src="" alt=""><button></button></div>
+            <div class="metodo"><p>EOQ_VAR</p><img src="./src/eoq_var.png" alt=""><button onclick="ocultarpan();"></button></div>
+            <div class="metodo"><p>CRITERIOS</p><img src="./src/criterio.png" alt=""><button onclick="ocultarpanel();"></button></div>
+            <div class="metodo"><p>ARB. DESICION</p><img src="./src/arboles.jpg" alt=""><button onclick="ocultarpanll();"></button></div>
         </div>
         </div>
         <div id="CPM" class="ejecucion">
@@ -59,17 +53,41 @@
                 <input id="ejecut" type="submit" onclick="eoq()" value="ejecutar">
                 <div id="respuestaseoq" style="display:none;">
                 <li>Cantidad optima <p id="canop"></p></li>
-                <li>Reorden <p id="reor"></p></li>
-                <li>Inventario promedio <p id="ipro"></p></li>
-                <li>Costo anual por mantener una unidad<p id="caun"></p></li>
-                <li>Costo total anual de ordenar <p id="caor"></p></li>
-                <li>Costo anual por mantener<p id="cama"></p></li>
-                <li>Reorden <p id="reor"></p></li>
+                <li>Punto de reorden <p id="reor"></p></li>
+                <li>Numero de ordenes <p id="nuor"></p></li>
+                <li>Tiempo de ciclo <p id="ticiclo"></p></li>
+                <li>Costo anual de ordenar <p id="cosaor"></p></li>
+                <li>Costo anual de manter <p id="cosaman"></p></li>
+                <li>Costo total anual <p id="costotal"></p></li>
                 </div>
             </ul> 
+        </div>
+        <div id="EOQVAR" class="ejecucion">
+            <ul>
+                <li>Costo de compra: <input id="cocom" type="text"></li>
+                <li>Precio de venta liquida: <input id="venli" type="text"></li>
+                <li>Precio de venta regular: <input id="venre" type="text"></li>
+                <li>Limite superior: <input id="limsup" type="text"></li>
+                <li>Limite inferior: <input id="liminf" type="text"></li>
+                <input id="ejemets" type="submit" onclick="eoq_var()" value="ejecutar">
+                <div id="respuestaseoq_var" style="display:none;">
+                <li><p>Cantidad optima <p id="cantta"></p></li>
+                <div>
+            </ul>
+        </div>
+        <div id="CRITERIO" class="ejecucion">
+            <li>
+                
+            </li>
+        </div>
+        <div id="ARBOL" class="ejecucion">
+
         </div>
 <script src="dinamico.js"></script>
 <script src="metodos/cpm.js"></script>
 <script src="metodos/eoq.js"></script>
+<script src="metodos/eoq_var.js"></script>
+<script src="metodos/criterio.js"></script>
+<script src="metodos/arboles.js"></script>
 </body> 
 </html>

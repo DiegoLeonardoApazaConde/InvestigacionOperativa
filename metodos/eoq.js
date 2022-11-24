@@ -18,7 +18,20 @@ const eoq = () =>{
     cantidad=Math.pow((2*dem*costo/mant),0.5)
     const resq = document.getElementById("canop");
     const resreor = document.getElementById("reor");
+    const numor = document.getElementById("nuor");
+    const timecicle = document.getElementById("ticiclo");
+    const costor = document.getElementById("cosaor");
+    const costmant = document.getElementById("cosaman");
+    const costtotal = document.getElementById("costotal");
     resq.append(cantidad)
-
+    timecicle.append(año/(dem/cantidad))
+    costor.append((dem/cantidad)*(costo))
+    costmant.append((cantidad/2)*(mant))
+    costtotal.append(((cantidad/2)*(mant))+((dem/cantidad)*(costo)))
+    if(demo!=""){
+    resreor.append(((dem*demo)/año)*demo)
+    numor.append(demo/cantidad)
+    }
+    document.getElementById("ejecut").style.display="none"
     document.getElementById("respuestaseoq").style.display="block"
 }
