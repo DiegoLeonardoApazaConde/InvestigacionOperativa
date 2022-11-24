@@ -38,7 +38,6 @@ const CallData = () =>{
                     }
              }
         }
-        console.log(matrizval);
         const result = matrizval.filter(word => word.length!=0);
         contenerdor[df-1] = result; 
     }
