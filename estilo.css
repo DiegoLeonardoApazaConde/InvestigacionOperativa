@@ -201,4 +201,9 @@ body {
     color: var(--claro);
     background-color: var(--fondo_panel);
 }
-
+.tablalter{
+    background-color: var(--fondo_panel);
+    color: var(--claro);
+    position: relative;
+    margin: 3%;
+}

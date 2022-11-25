@@ -11,11 +11,12 @@
     <div id="info">
         <p>Integrantes</p>
         <ul>
-           <li>Diego Leonardo Apaza Conde 2018-119021</li>
-           <li></li>
-           <li></li>
-           <li></li>
-           <li></li>
+           <li>Diego Leonardo Apaza Conde 2018-119021</li><br>
+           <li>Julio Cesar Choquehuayta Quenta 2018-119025</li><br>
+           <li>Kheyvin Derliz Arocutipa Cama 2018-119022</li><br>
+           <li>Felix Fernando Quispe Sentecala 2019-119018</li><br>
+           <li>Elvis Jhonatan Perez Checalla 2017-119056</li><br>
+           <li>Juan Jose Mamani Mendoza 2015-119064</li><br>
         </ul>
     </div>
     <div id="panelmaestro">
@@ -28,8 +29,8 @@
             <div class="metodo"><p>PERT</p><img src="./src/pert.jpg" alt=""><button onclick="aparpan('CPM','PERT');cuals('PERT');"></button></div>
             <div class="metodo"><p>EOQ</p><img src="./src/EOQ.jpg" alt=""><button onclick="mospanel();"></button></div>
             <div class="metodo"><p>EOQ_VAR</p><img src="./src/eoq_var.png" alt=""><button onclick="ocultarpan();"></button></div>
-            <div class="metodo"><p>CRITERIOS</p><img src="./src/criterio.png" alt=""><button onclick="ocultarpanel();"></button></div>
-            <div class="metodo"><p>ARB. DESICION</p><img src="./src/arboles.jpg" alt=""><button onclick="ocultarpanll();"></button></div>
+            <div class="metodo"><p>CRITERIOS</p><img src="./src/criterio.png" alt=""><button onclick="ocultar();"></button></div>
+            <div class="metodo"><p>ARB. DESICION</p><img src="./src/arboles.jpg" alt=""><button onclick="entornon();"></button></div>
         </div>
         </div>
         <div id="CPM" class="ejecucion">
@@ -75,19 +76,29 @@
                 <div>
             </ul>
         </div>
-        <div id="CRITERIO" class="ejecucion">
-            <li>
-                
-            </li>
+        <div id="CRITERIO_S" class="ejecucion">
+            <ul>
+                <li>Ingresar cantidad de alternativas :<input type="text" name="" id="critnum"></li>
+                <li>Ingresar cantidad de criterios :<input type="text" name="" id="crite"></li>
+                <li><input type="submit" name="" id="generarm" value="Generar" onclick="crear();"></li>
+            </ul>
+            <div id="contablas">
+
+            </div>
         </div>
         <div id="ARBOL" class="ejecucion">
-
+            <ul>
+                <li>Ingresar alternativas<input type="text" name="" id=""></li>
+                <li>Ingresar estados<input type="text" name="" id=""></li>
+                <li><input type="submit" name="" id="compiar" onclick="" value="Generar"></li>
+            </ul>
         </div>
+        
 <script src="dinamico.js"></script>
 <script src="metodos/cpm.js"></script>
 <script src="metodos/eoq.js"></script>
 <script src="metodos/eoq_var.js"></script>
-<script src="metodos/criterio.js"></script>
+<script src="metodos/criterio_s.js"></script>
 <script src="metodos/arboles.js"></script>
 </body> 
 </html>

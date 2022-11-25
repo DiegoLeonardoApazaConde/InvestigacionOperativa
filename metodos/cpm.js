@@ -165,8 +165,8 @@ const CallData = () =>{
     const filnom = document.createElement("tr")
     colaster.append("Camino");filnom.appendChild(colaster)
     coltiempos.append("Actividades");filnom.appendChild(coltiempos)
-    colruta.append("Ruta critica");filnom.appendChild(colruta)
-    coltarde.append("Valor de regreso");filnom.appendChild(coltarde)
+    colruta.append("Acumulado");filnom.appendChild(colruta)
+    coltarde.append("Recorrido de regreso");filnom.appendChild(coltarde)
     colhol.append("Holguras");filnom.appendChild(colhol)
     tablafinres.appendChild(filnom)
     for(let finej=0;finej<tamaño;finej++){
